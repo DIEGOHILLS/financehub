@@ -4,9 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "fix": "rm -rf index.html && echo '<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><title>FinanceHub</title></head><body><div id=\"root\"></div><script type=\"module\" src=\"/src/main.tsx\"></script></body></html>' > index.html",
     "dev": "vite",
-    "build": "vite build --config vite.config.ts",
-    "build:dev": "vite build --mode development",
+    "build": "npm run fix && vite build --config vite.config.ts",
+    "build:dev": "npm run fix && vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview"
   },
